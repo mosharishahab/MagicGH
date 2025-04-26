@@ -1,52 +1,46 @@
 import React from 'react'
+import './MagicSunAndCloud.css'
 
 export default function MagicSunAndCloud() {
   return (
-    <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-
-      {/* خورشید کارتونی */}
-      <div className="absolute top-8 left-4 w-[120px] animate-bounce-slow">
-        <div className="relative w-full h-full">
-
+    <div className="relative w-full h-64 overflow-hidden">
+      {/* خورشید با عینک دودی */}
+      <div className="absolute top-4 left-8 z-10">
+        <svg width="100" height="100" viewBox="0 0 100 100" className="animate-spin-slow">
           {/* نورهای چرخان */}
-          <div className="absolute inset-0 animate-spin-slow">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
-              <g stroke="#FFD700" strokeWidth="2">
-                <line x1="50" y1="5" x2="50" y2="20" />
-                <line x1="50" y1="80" x2="50" y2="95" />
-                <line x1="5" y1="50" x2="20" y2="50" />
-                <line x1="80" y1="50" x2="95" y2="50" />
-                <line x1="20" y1="20" x2="30" y2="30" />
-                <line x1="70" y1="70" x2="80" y2="80" />
-                <line x1="20" y1="80" x2="30" y2="70" />
-                <line x1="70" y1="30" x2="80" y2="20" />
-              </g>
-            </svg>
-          </div>
-
-          {/* صورت و عینک خورشید */}
-          <svg viewBox="0 0 100 100" className="absolute top-0 left-0 w-full h-full">
-            <circle cx="50" cy="50" r="25" fill="#FFD700" stroke="#FFC400" strokeWidth="2" />
-            <circle cx="42" cy="45" r="3" fill="#000" className="animate-blink" />
-            <circle cx="58" cy="45" r="3" fill="#000" />
-            <path d="M40 60 Q50 70 60 60" stroke="#000" strokeWidth="2" fill="transparent" />
-            <rect x="36" y="42" width="10" height="6" rx="2" fill="#111" />
-            <rect x="54" y="42" width="10" height="6" rx="2" fill="#111" />
-            <line x1="46" y1="45" x2="54" y2="45" stroke="#111" strokeWidth="2" />
-          </svg>
-
-        </div>
+          {[...Array(8)].map((_, i) => (
+            <circle
+              key={i}
+              cx="50"
+              cy="10"
+              r="5"
+              fill="#FFD700"
+              transform={`rotate(${i * 45},50,50)`}
+            />
+          ))}
+          {/* خورشید اصلی */}
+          <circle cx="50" cy="50" r="25" fill="#FFD700" stroke="#fbbf24" strokeWidth="2" />
+          {/* چشم‌ها */}
+          <circle cx="42" cy="45" r="2" fill="#333" />
+          <circle cx="58" cy="45" r="2" fill="#333" />
+          {/* لبخند */}
+          <path d="M40,60 Q50,70 60,60" stroke="#333" strokeWidth="2" fill="none" />
+          {/* عینک دودی */}
+          <rect x="36" y="42" width="10" height="6" fill="#333" />
+          <rect x="54" y="42" width="10" height="6" fill="#333" />
+          <line x1="46" y1="45" x2="54" y2="45" stroke="#333" strokeWidth="2" />
+        </svg>
       </div>
 
       {/* ابر فانتزی */}
-      <svg viewBox="0 0 300 150" className="absolute top-32 left-0 w-[360px] animate-cloud-move" xmlns="http://www.w3.org/2000/svg">
-        <g fill="#ffffff" stroke="#cce6ff" strokeWidth="4">
-          <ellipse cx="80" cy="75" rx="60" ry="45" />
-          <ellipse cx="140" cy="65" rx="50" ry="40" />
-          <ellipse cx="210" cy="80" rx="55" ry="45" />
-          <ellipse cx="140" cy="100" rx="90" ry="55" />
-        </g>
-      </svg>
+      <div className="absolute top-20 left-4 w-72 z-0 opacity-90">
+        <svg viewBox="0 0 300 120">
+          <ellipse cx="60" cy="60" rx="50" ry="30" fill="#fff" stroke="#dbeafe" strokeWidth="2" />
+          <ellipse cx="110" cy="50" rx="60" ry="35" fill="#fff" stroke="#dbeafe" strokeWidth="2" />
+          <ellipse cx="170" cy="60" rx="55" ry="30" fill="#fff" stroke="#dbeafe" strokeWidth="2" />
+          <ellipse cx="110" cy="80" rx="100" ry="40" fill="#fff" stroke="#dbeafe" strokeWidth="2" />
+        </svg>
+      </div>
     </div>
   )
 }
