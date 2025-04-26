@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* بکگراند اصلی آسمون */
+/* فونت */
 body {
   direction: rtl;
   font-family: 'Lalezar', cursive;
-  background: url('https://raw.githubusercontent.com/CodeGrindHub/assets/main/cartoon-sky.jpg') no-repeat center center fixed;
-  background-size: cover;
   overflow-x: hidden;
   height: 100vh;
+  background: linear-gradient(to top right, #fff1eb, #ace0f9);
 }
 
 /* خورشید درخشان */
@@ -21,6 +20,7 @@ body {
   height: 100px;
   background: url('https://raw.githubusercontent.com/CodeGrindHub/assets/main/sun.png') no-repeat center/contain;
   animation: shineSun 4s ease-in-out infinite alternate;
+  z-index: 1;
 }
 
 @keyframes shineSun {
@@ -28,7 +28,7 @@ body {
   100% { opacity: 1; transform: scale(1.1); }
 }
 
-/* ابرهای متحرک */
+/* ابر */
 .cloud {
   position: absolute;
   top: 10%;
@@ -37,6 +37,7 @@ body {
   background: url('https://raw.githubusercontent.com/CodeGrindHub/assets/main/cloud.png') no-repeat center/contain;
   animation: moveClouds 60s linear infinite;
   opacity: 0.8;
+  z-index: 2;
 }
 
 .cloud2 {
@@ -46,12 +47,7 @@ body {
   animation-delay: 5s;
 }
 
-@keyframes moveClouds {
-  0% { left: -250px; }
-  100% { left: 100%; }
-}
-
-/* پرنده‌های متحرک */
+/* پرنده */
 .bird {
   position: absolute;
   top: 20%;
@@ -60,6 +56,7 @@ body {
   background: url('https://raw.githubusercontent.com/CodeGrindHub/assets/main/bird.png') no-repeat center/contain;
   animation: flyBirds 40s linear infinite;
   opacity: 0.9;
+  z-index: 3;
 }
 
 .bird2 {
@@ -67,6 +64,11 @@ body {
   width: 60px;
   animation-duration: 50s;
   animation-delay: 10s;
+}
+
+@keyframes moveClouds {
+  0% { left: -250px; }
+  100% { left: 100%; }
 }
 
 @keyframes flyBirds {
