@@ -99,3 +99,38 @@ body {
   direction: rtl;
   font-family: 'Lalezar', cursive;
 }
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 3s infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 5s ease-in-out infinite;
+}
+
+@keyframes cloud-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+
+.animate-cloud-move {
+  animation: cloud-move 10s ease-in-out infinite alternate;
+}
