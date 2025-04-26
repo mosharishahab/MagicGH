@@ -1,53 +1,41 @@
 import { useState } from 'react'
 
 export default function App() {
-  const [name, setName] = useState('')
-  const [animal, setAnimal] = useState('')
-  const [topic, setTopic] = useState('')
-  const [story, setStory] = useState('')
+  const [started, setStarted] = useState(false)
 
-  const generateStory = () => {
-    const result = `روزی روزگاری کودکی به نام ${name} با حیوان مورد علاقه‌اش ${animal}، به دنبال ${topic} راهی یک ماجراجویی شاد و جادویی شد...`
-    setStory(result)
+  if (!started) {
+    return (
+      <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        {/* خورشید */}
+        <div className="sun"></div>
+
+        {/* ابرهای متحرک */}
+        <div className="cloud"></div>
+        <div className="cloud cloud2"></div>
+
+        {/* پرنده‌های متحرک */}
+        <div className="bird"></div>
+        <div className="bird bird2"></div>
+
+        {/* کارت شروع */}
+        <div className="bg-white bg-opacity-80 rounded-3xl shadow-2xl p-8 max-w-md w-full z-10">
+          <h1 className="text-5xl text-blue-500 font-extrabold mb-6">به قصه‌ساز خوش اومدی!</h1>
+          <p className="text-lg text-gray-600 mb-8">بزن بریم یک داستان جادویی بسازیم</p>
+          <button
+            className="bg-pink-400 hover:bg-pink-500 text-white px-8 py-4 rounded-full font-bold text-xl transition transform hover:scale-110"
+            onClick={() => setStarted(true)}
+          >
+            شروع قصه
+          </button>
+        </div>
+      </div>
+    )
   }
 
+  // بعد از شروع قصه
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-pink-200 via-yellow-100 to-blue-200 p-6">
-      <div className="bg-white bg-opacity-80 rounded-3xl shadow-2xl p-8 max-w-md w-full text-center">
-        <h1 className="text-4xl font-extrabold text-pink-600 mb-8">قصه‌ساز جادویی</h1>
-
-        <input
-          className="border-2 border-pink-300 p-3 mb-4 w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
-          placeholder="اسم کودک"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          className="border-2 border-yellow-300 p-3 mb-4 w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-          placeholder="حیوان مورد علاقه"
-          value={animal}
-          onChange={(e) => setAnimal(e.target.value)}
-        />
-        <input
-          className="border-2 border-blue-300 p-3 mb-6 w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-          placeholder="موضوع داستان"
-          value={topic}
-          onChange={(e) => setTopic(e.target.value)}
-        />
-
-        <button
-          className="bg-pink-400 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-bold transition transform hover:scale-105"
-          onClick={generateStory}
-        >
-          بساز قصه!
-        </button>
-
-        {story && (
-          <div className="mt-8 p-6 bg-yellow-100 rounded-xl shadow-inner text-gray-700 leading-8">
-            <p>{story}</p>
-          </div>
-        )}
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-pink-100 via-yellow-100 to-blue-100 p-4">
+      <h2 className="text-3xl text-blue-600 font-extrabold">اینجا فرم وارد کردن اسم کودک، حیوان و موضوع قصه میاد</h2>
     </div>
   )
 }
