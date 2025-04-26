@@ -91,3 +91,11 @@ body {
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  direction: rtl;
+  font-family: 'Lalezar', cursive;
+}
