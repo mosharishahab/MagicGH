@@ -2,103 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* فونت */
-body {
-  direction: rtl;
-  font-family: 'Lalezar', cursive;
-  overflow-x: hidden;
-  height: 100vh;
-  background: linear-gradient(to top right, #fff1eb, #ace0f9);
-}
-
-/* خورشید درخشان */
-.sun {
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  width: 100px;
-  height: 100px;
-  background: url('https://raw.githubusercontent.com/CodeGrindHub/assets/main/sun.png') no-repeat center/contain;
-  animation: shineSun 4s ease-in-out infinite alternate;
-  z-index: 1;
-}
-
-@keyframes shineSun {
-  0% { opacity: 0.7; transform: scale(1); }
-  100% { opacity: 1; transform: scale(1.1); }
-}
-
-/* ابر */
-.cloud {
-  position: absolute;
-  top: 10%;
-  width: 200px;
-  height: 120px;
-  background: url('https://raw.githubusercontent.com/CodeGrindHub/assets/main/cloud.png') no-repeat center/contain;
-  animation: moveClouds 60s linear infinite;
-  opacity: 0.8;
-  z-index: 2;
-}
-
-.cloud2 {
-  top: 30%;
-  width: 150px;
-  animation-duration: 80s;
-  animation-delay: 5s;
-}
-
-/* پرنده */
-.bird {
-  position: absolute;
-  top: 20%;
-  width: 80px;
-  height: 60px;
-  background: url('https://raw.githubusercontent.com/CodeGrindHub/assets/main/bird.png') no-repeat center/contain;
-  animation: flyBirds 40s linear infinite;
-  opacity: 0.9;
-  z-index: 3;
-}
-
-.bird2 {
-  top: 35%;
-  width: 60px;
-  animation-duration: 50s;
-  animation-delay: 10s;
-}
-
-@keyframes moveClouds {
-  0% { left: -250px; }
-  100% { left: 100%; }
-}
-
-@keyframes flyBirds {
-  0% { left: 110%; transform: scaleX(1); }
-  50% { transform: scaleX(-1); }
-  100% { left: -20%; transform: scaleX(-1); }
-}
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  direction: rtl;
-  font-family: 'Lalezar', cursive;
-}
+/* استایل های انیمیشن */
 @keyframes spin-slow {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -133,4 +37,9 @@ body {
 
 .animate-cloud-move {
   animation: cloud-move 10s ease-in-out infinite alternate;
+}
+
+body {
+  direction: rtl;
+  font-family: 'Lalezar', cursive;
 }
