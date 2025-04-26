@@ -28,5 +28,14 @@ function App() {
     </div>
   )
 }
+import MagicSunAndCloud from './components/MagicSunAndCloud'
 
+function App() {
+  return (
+    <div className="App">
+      <MagicSunAndCloud />
+      {/* باقی صفحه */}
+    </div>
+  )
+}
 export default App
