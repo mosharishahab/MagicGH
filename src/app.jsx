@@ -1,8 +1,12 @@
 export default function App() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div style={{
+      fontFamily: 'sans-serif',
+      textAlign: 'center',
+      paddingTop: '100px'
+    }}>
       <h1>سلام شهاب جون!</h1>
-      <p>پروژه React و Vite با موفقیت اومده بالا.</p>
+      <p>پروژه React با موفقیت دیپلوی شد روی GitHub Pages!</p>
     </div>
   )
 }
